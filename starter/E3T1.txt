@@ -1,0 +1,9 @@
+# Describe GuardDuty findings that were detected related to the brute force attack
+
+# Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+
+The AWS Guard Duty documentation page states that GuardDuty analyzes and interprets data from DNS logs, VPC Flow Logs, and AWS CloudTrail event logs. GuardDuty should be utilizing VPC Flow Logs for the detection of brute force assaults.
+- Investigate CloudTrail activity coming from the IP address to look for any odd volumetric trends, any fresh activity, and to identify the resources that have been using the IP address.
+- Investigate CloudTrail activity at the account level to find odd patterns in volume, fresh activity, and location access.
+- View the activity details or investigate trends in VPC flow traffic. Analyze the CloudTrail activity connected to the EC2 Instance and spot any unusual behavior right away.
+- Look at the relationships between the resources and actors mentioned in the investigation as well as trends, new behaviors, and patterns.

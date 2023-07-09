@@ -1,0 +1,18 @@
+
+# What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
+
+- To limit egress traffic, add a Web Proxy Layer or a NAT gateway.
+- Establish web application firewalls to thwart attacks like Cloud Front..
+- It is possible to configure Web application firewalls (WAF) to block or log suspicious traffic.
+- Add an IAM policy to the bucket to prevent certain roles from performing read operations.
+- Make Network ACL rules that prohibit particular traffic
+- Change the web server instance's public subnet to its private subnet.
+
+# Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+- No, because the gateway endpoint's default policy does not prohibit access to the VPC endpoint
+
+# Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+- No, The encryption of the objects in the bucket that were there before default encryption was enabled is unchanged.
+
+# What would happen if the original cloud formation templates are applied to this environment.
+- Instead of configuring using the AWS management console, Cloudformation configuration will be used for all settings.

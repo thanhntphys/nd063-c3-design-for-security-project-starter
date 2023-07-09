@@ -1,0 +1,24 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+
+
+## AWS Config: Non Compliant Rules 
+securityhub-iam-password-policy-number-check-991b1a55: Checks whether the account password policy for IAM users requires at least one number in password.
+securityhub-iam-password-policy-ensure-expires-06d449f0: Checks whether the account password policy for IAM users expires passwords within certain days
+securityhub-encrypted-volumes-b43a1431: Checks whether the EBS volumes that are in an attached state are encrypted. If you specify the ID of a KMS key for encryption using the kmsId parameter, the rule checks if the EBS volumes in an attached state are encrypted with that KMS key.
+securityhub-iam-password-policy-number-check-991b1a55: Checks whether the account password policy for IAM users requires at least one number in password.
+securityhub-vpc-default-security-group-closed-4e8cdaef: Checks whether the default security group for VPC is closed.
+
+## Amazon Inspector - Findings
+- Finding: Security groups WebAppSG allow ingress from 0.0.0.0/0 to port 3389 & 22
+- Finding: Attached EBS volumes should be encrypted at-rest for the Web Service Instance
+- Finding: Web Service EC2 Instance is configured to allow users to log in with root credentials over SSH, without having to use a command authenticated by a public key. This increases the likelihood of a successful brute-force attack.
+- Finding: Web Service EC2 Instance is configured to support password authentication over SSH. Password authentication is susceptible to brute-force attacks and should be disabled in favor of key-based authentication where possible.
+- Finding: On Web Service EC2 Instance, process 'systemd-netwo' is listening on UDP port 68 which is associated with 'DHCP' and is reachable from the internet
+- Finding: On Web Service EC2 Instance, process 'sshd' is listening on TCP port 22 which is associated with 'SSH' and is reachable from the internet
+
+### Security Hub
+Finding: Security groups WebAppSG allow ingress from 0.0.0.0/0 to port 3389 & 22
+Finding: S3 Secret, VPC and Free Recipe flow log buckets should have server-side encryption enabled.
+Finding: Attached EBS volumes should be encrypted at-rest for the Web Service Instance

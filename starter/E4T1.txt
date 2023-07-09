@@ -1,0 +1,13 @@
+
+
+# Identify 2-3 changes that can be made to our environment to prevent an ssh brute force attack from the internet.
+- The private subnet's Network ACL should be updated to prohibit incoming SSH traffic,
+- Allow connections only from the port 5000 where the application load balancer is located.
+- Remove the untrusted EC2 SSH inbound rule from the WebAppSG Security Group.
+- To host the Web Service instance and enable inbound traffic from the application load balancer, create a private subnet inside the VPC.
+
+
+# Neither instance should have had access to the secret recipes bucket, in the even that instance API credentials were compromised how could we have prevented access to sensitive data.
+- Least privilege access is implemented and the c3-app-InstanceRole IAM role policy is updated.
+- Change the S3 bucket's policy so that only one instance is permitted to read data.
+- Amazon S3 supports server-side encryption by default.

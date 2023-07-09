@@ -1,0 +1,31 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+
+### Appropriate Tools:
+- Gitlab CI/CD
+
+### Example vulnerability
+
+- Detect cloud misconfigurations.
+- S3 bucket doesn't encrypted
+- EBS volume encryption disabled
+
+
+##Scan AMI’s or containers for OS vulnerabilities
+
+### Appropriate Tools:
+- Anchore
+
+### Example vulnerability
+- Defects from Image Configuration
+- Using untrusted images
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+
+### Appropriate Tools:
+- AWS Config
+
+### Example vulnerability
+- KMS, IAM policy changes
+- Data not encrypted
